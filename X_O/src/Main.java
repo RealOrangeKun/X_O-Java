@@ -1,13 +1,21 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        NameMenu menu1 = new NameMenu();
-        StringBuilder name= new StringBuilder();
-        while (!menu1.Userinput()){
-            name.append("a");
+    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+        MusicPlayer mp = new MusicPlayer();
+        JFrame frame = new JFrame();
+        NameMenu menu1 = new NameMenu(frame);
+        MusicPlayer.playmusic();
+        if (menu1.Userinput()) {
+            String username = menu1.getUsername();
+            System.out.println("Username: " + username);
+        } else {
+            System.out.println("User canceled");
+            System.exit(0);
         }
-        name = new StringBuilder(menu1.getUsername());
-        System.out.println(name);
+
     }
 }
