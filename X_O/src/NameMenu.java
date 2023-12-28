@@ -36,7 +36,6 @@ public class NameMenu extends JDialog implements MouseListener, ActionListener, 
         top_panel_label.setHorizontalAlignment(0);
         top_panel_label.setFont(new Font("Dubai", Font.BOLD, 26));
         topPanel.setPreferredSize(new Dimension(100, 300));
-
         submit = new JButton("Submit");
         submit.setPreferredSize(new Dimension(100, 200));
         submit.setFocusable(false);
