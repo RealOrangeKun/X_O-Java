@@ -1,42 +1,45 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.border.StrokeBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
+import java.io.IOException;
 import java.util.Objects;
 
-public class NameMenu extends JFrame implements MouseListener, ActionListener {
+public class NameMenu extends JDialog implements MouseListener, ActionListener, KeyListener {
     private JTextField namefield;
-    private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     private JButton submit;
 
     private JPanel topPanel, bottomPanel;
-    private boolean button_pressed= false;
+    private boolean button_pressed = false;
 
     private String Username;
 
-    NameMenu() {
+    NameMenu(Frame parent) {
+        super(parent, true);
         Image icon = new ImageIcon("icon.png").getImage().getScaledInstance(300, 300, 900);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLayout(new BorderLayout());
-        this.setSize(500, 500);
+        this.setSize(600, 600);
+        this.setTitle("Please enter your name");
         this.setIconImage(new ImageIcon(icon).getImage());
         this.addMouseListener(this);
+        this.addKeyListener(this);
 
         topPanel = new JPanel(new GridLayout());
-        JLabel top_panel_label = new JLabel("Please enter your name:");
+        JLabel top_panel_label = new JLabel("Please enter your name in the text field");
         topPanel.add(top_panel_label);
         top_panel_label.setVerticalAlignment(0);
         top_panel_label.setHorizontalAlignment(0);
-        top_panel_label.setFont(new Font("Dubai", Font.BOLD, 30));
+        top_panel_label.setFont(new Font("Dubai", Font.BOLD, 26));
+        topPanel.setBackground(new Color(3, 18, 94));
         topPanel.setPreferredSize(new Dimension(100, 300));
 
         submit = new JButton("Submit");
-        submit.setPreferredSize(new Dimension(100,200));
+        submit.setPreferredSize(new Dimension(100, 200));
         submit.setFocusable(false);
         submit.setBackground(Color.LIGHT_GRAY);
         submit.setBorder(new StrokeBorder(new BasicStroke(1)));
@@ -48,35 +51,39 @@ public class NameMenu extends JFrame implements MouseListener, ActionListener {
         namefield.setLayout(new GridLayout());
         namefield.setFont(new Font("Dubai", Font.BOLD, 26));
         namefield.setForeground(Color.LIGHT_GRAY);
-        namefield.setBorder(new StrokeBorder(new BasicStroke(2)));
+        namefield.setBorder(new LineBorder(Color.BLACK));
         namefield.setHorizontalAlignment(0);
         namefield.setCaretPosition(namefield.getText().length());
         namefield.addMouseListener(this);
-        namefield.setPreferredSize(new Dimension(this.getWidth()-submit.getWidth(), 200));
+        namefield.setPreferredSize(new Dimension(this.getWidth() - submit.getWidth(), 150));
         namefield.setEnabled(false);
-
+        namefield.addKeyListener(this);
 
         bottomPanel = new JPanel(new BorderLayout());
         bottomPanel.add(namefield, BorderLayout.CENTER);
         bottomPanel.add(submit, BorderLayout.EAST);
 
-        this.add(bottomPanel, BorderLayout.SOUTH);
-        this.add(topPanel, BorderLayout.NORTH);
+
+        this.add(bottomPanel, BorderLayout.NORTH);
+        this.add(topPanel, BorderLayout.CENTER);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((int) (screenSize.getWidth() - this.getWidth()) / 2,
                 (int) (screenSize.getHeight() - this.getHeight()) / 2);
         this.setVisible(true);
     }
 
-    public boolean Userinput(){
-        return button_pressed;
+    public boolean Userinput() {
+        return button_pressed && !Objects.equals(namefield.getText(), "Please enter your name here");
     }
-    public String getUsername(){
-        if(Username == null) return "";
+
+    public String getUsername() {
+        if (Username == null) return "";
         return Username;
     }
+
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getSource()==this){
+        if (e.getSource() == this) {
             namefield.setEnabled(false);
             namefield.setForeground(Color.lightGray);
         }
@@ -86,7 +93,7 @@ public class NameMenu extends JFrame implements MouseListener, ActionListener {
     public void mousePressed(MouseEvent e) {
         if (e.getSource() == namefield) {
             namefield.setEnabled(true);
-            if(Objects.equals(namefield.getText(), "Please enter your name here")) namefield.setText("");
+            if (Objects.equals(namefield.getText(), "Please enter your name here")) namefield.setText("");
             namefield.setForeground(Color.BLACK);
         }
     }
@@ -98,7 +105,7 @@ public class NameMenu extends JFrame implements MouseListener, ActionListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if(e.getSource()==submit){
+        if (e.getSource() == submit) {
             submit.setBorder(new LineBorder(Color.BLACK));
             submit.setForeground(Color.BLACK);
         }
@@ -106,7 +113,7 @@ public class NameMenu extends JFrame implements MouseListener, ActionListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
-        if(e.getSource()==submit){
+        if (e.getSource() == submit) {
             submit.setBorder(new StrokeBorder(new BasicStroke(1)));
             submit.setForeground(Color.white);
         }
@@ -114,11 +121,31 @@ public class NameMenu extends JFrame implements MouseListener, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==submit){
+        if (e.getSource() == submit) {
             Username = namefield.getText();
             namefield.setEnabled(false);
             button_pressed = true;
-            this.setEnabled(false);
+            dispose();
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == 10 && e.getSource() == namefield){
+            Username = namefield.getText();
+            namefield.setEnabled(false);
+            button_pressed = true;
+            dispose();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }
