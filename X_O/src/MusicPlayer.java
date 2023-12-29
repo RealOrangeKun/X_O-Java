@@ -6,24 +6,27 @@ import java.util.concurrent.CountDownLatch;
 
 
 public class MusicPlayer extends Thread{
-    public static void playmusic() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+    private static CountDownLatch latch = new CountDownLatch(1);
+    public static void playmusic(String music) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         try {
-            File musicFile = new File("music.wav");
+            File musicFile = new File(music);
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(musicFile);
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
-            CountDownLatch latch = new CountDownLatch(3);
+            latch = new CountDownLatch(1);
             clip.addLineListener(event -> {
                 if (event.getType() == LineEvent.Type.STOP) {
                     latch.countDown();
 
                 }
             });
-            clip.loop(1);
             clip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
 
+    }
+    public static void waitForPlayback() throws InterruptedException {
+        latch.await();
     }
 }
