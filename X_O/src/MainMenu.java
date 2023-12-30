@@ -38,6 +38,10 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         settings.setBackground(Color.white);
         exit.setBackground(Color.white);
         exit.addActionListener(this);
+        start.addMouseListener(this);
+        settings.addActionListener(this);
+        settings.addMouseListener(this);
+        exit.addMouseListener(this);
         Image starticon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(40,40,100);
         start.setIcon(new ImageIcon(starticon));
         start.setIconTextGap(20);
@@ -120,12 +124,28 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        if(e.getSource() == start){
+            start.setBackground(new Color(105, 186, 240));
+        }
+        else if(e.getSource() == settings){
+            settings.setBackground(new Color(105, 186, 240));
+        }
+        else if(e.getSource() == exit){
+            exit.setBackground(new Color(105, 186, 240));
+        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        if(e.getSource() == start){
+            start.setBackground(Color.white);
+        }
+        else if(e.getSource() == settings){
+            settings.setBackground(Color.white);
+        }
+        else if(e.getSource() == exit){
+            exit.setBackground(Color.white);
+        }
     }
 
     @Override
@@ -138,6 +158,10 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
                 this.dispose();
                 System.exit(0);
             }
+        }
+        else if(e.getSource()==settings){
+            new SettingsMenu(this);
+            this.setVisible(false);
         }
     }
 }
