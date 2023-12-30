@@ -51,7 +51,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                Image icon2 = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+                Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
                 int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
                 if (response == 0) {
@@ -144,7 +144,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
 
     private boolean GameIsOver() {
         if (NOfMoves >= 9 || IsWinner()) {
-            Image icon2 = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+            Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
             String[] s = {"Play Again", "Exit", "Main Menu"};
             int response = JOptionPane.showOptionDialog(null, "Do you want to play again?", "Confirm",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2), s, 0);

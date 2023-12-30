@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class SettingsMenu extends JFrame implements ActionListener, MouseListener {
-    private final Image icon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
+    private final Image icon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
     private JPanel middlePanel;
     private JButton music, fullscreen, back;
     private Color backgroundColor = new Color(1, 2, 64);

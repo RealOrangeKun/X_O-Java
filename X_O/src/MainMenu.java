@@ -13,7 +13,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     private SettingsMenu sm;
     private final int buttonSpacing = 50;
     private Color backgroundColor = new Color(1, 2, 64);
-    private final Image icon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
+    private final Image icon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
 
     MainMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
         sm = new SettingsMenu(this);
@@ -45,9 +45,9 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         settings.addActionListener(this);
         settings.addMouseListener(this);
         exit.addMouseListener(this);
-        Image starticon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(40, 40, 100);
-        Image settingsicon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\settings.png").getImage().getScaledInstance(40, 40, 100);
-        Image exiticon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\exit.png").getImage().getScaledInstance(60, 60, 100);
+        Image starticon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(40, 40, 100);
+        Image settingsicon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\settings.png").getImage().getScaledInstance(40, 40, 100);
+        Image exiticon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\exit.png").getImage().getScaledInstance(60, 60, 100);
         settings.setIcon(new ImageIcon(settingsicon));
         start.setIcon(new ImageIcon(starticon));
         exit.setIcon(new ImageIcon(exiticon));
@@ -86,7 +86,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                Image icon2 = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+                Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
                 int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
                 if (response == 0) {
@@ -101,7 +101,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.setResizable(false);
         this.pack();
         this.setVisible(true);
-        MusicPlayer.playmusic("F:\\X_O-Java\\X_O\\src\\resources\\music2.wav");
+        MusicPlayer.playmusic(System.getProperty("user.dir")+"\\src\\resources\\music2.wav");
         MusicPlayer.waitForPlayback();
     }
 
@@ -167,7 +167,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exit) {
-            Image icon2 = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+            Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
             int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
             if (response == 0) {

@@ -22,7 +22,7 @@ public class NameMenu extends JDialog implements MouseListener, ActionListener, 
 
     NameMenu(Frame parent) {
         super(parent, true);
-        Image icon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
+        Image icon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLayout(new BorderLayout());
         this.setSize(600, 600);

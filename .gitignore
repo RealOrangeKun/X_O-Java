@@ -40,3 +40,5 @@ build/
 
 
 *.xml
+*.log
+*.iml
