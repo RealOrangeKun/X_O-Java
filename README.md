@@ -31,7 +31,7 @@ Step-by-step instructions on how to install and run your X O game.
 
 ```bash
 # Example command to clone the repository
-git clone https://github.com/your-username/your-xo-game.git
+git clone https://github.com/RealOrangeKun/X_O-Java/tree/v1.0.0
 
 # Example command run the game
 cd X_O/bin/
