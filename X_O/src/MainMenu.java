@@ -10,12 +10,14 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     private JButton start, settings, exit;
     private JPanel topPanel, middlePanel;
 
-
+    private SettingsMenu sm;
     private final int buttonSpacing = 50;
     private Color backgroundColor = new Color(1, 2, 64);
     private final Image icon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
 
     MainMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
+        sm = new SettingsMenu(this);
+        sm.setVisible(false);
         topPanel = new JPanel(new GridLayout(1, 1));
         middlePanel = new JPanel(new GridLayout(3, 1));
         JLabel welcome = new JLabel("Welcome " + NameMenu.getUsername() + "!");
@@ -42,7 +44,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         settings.addActionListener(this);
         settings.addMouseListener(this);
         exit.addMouseListener(this);
-        Image starticon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(40,40,100);
+        Image starticon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(40, 40, 100);
         start.setIcon(new ImageIcon(starticon));
         start.setIconTextGap(20);
 
@@ -73,7 +75,18 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.setIconImage(new ImageIcon(icon).getImage());
         this.add(topPanel, BorderLayout.NORTH);
         this.add(middlePanel, BorderLayout.CENTER);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                Image icon2 = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+                int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
+                if (response == 0) {
+                    System.exit(0);
+                }
+            }
+        });
         this.setSize(new Dimension(350, 600));
         this.setLocation((int) (screenSize.getWidth() - this.getWidth()) / 2,
                 (int) (screenSize.getHeight() - this.getHeight()) / 2);
@@ -124,26 +137,22 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if(e.getSource() == start){
+        if (e.getSource() == start) {
             start.setBackground(new Color(105, 186, 240));
-        }
-        else if(e.getSource() == settings){
+        } else if (e.getSource() == settings) {
             settings.setBackground(new Color(105, 186, 240));
-        }
-        else if(e.getSource() == exit){
+        } else if (e.getSource() == exit) {
             exit.setBackground(new Color(105, 186, 240));
         }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        if(e.getSource() == start){
+        if (e.getSource() == start) {
             start.setBackground(Color.white);
-        }
-        else if(e.getSource() == settings){
+        } else if (e.getSource() == settings) {
             settings.setBackground(Color.white);
-        }
-        else if(e.getSource() == exit){
+        } else if (e.getSource() == exit) {
             exit.setBackground(Color.white);
         }
     }
@@ -158,9 +167,8 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
                 this.dispose();
                 System.exit(0);
             }
-        }
-        else if(e.getSource()==settings){
-            new SettingsMenu(this);
+        } else if (e.getSource() == settings) {
+            sm.setVisible(true);
             this.setVisible(false);
         }
     }
