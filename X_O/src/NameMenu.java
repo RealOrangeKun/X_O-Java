@@ -1,6 +1,8 @@
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.StrokeBorder;
 import java.awt.*;
@@ -16,11 +18,11 @@ public class NameMenu extends JDialog implements MouseListener, ActionListener, 
     private JPanel topPanel, bottomPanel;
     private boolean button_pressed = false;
 
-    private String Username;
+    private static String Username;
 
     NameMenu(Frame parent) {
         super(parent, true);
-        Image icon = new ImageIcon("icon.png").getImage().getScaledInstance(300, 300, 900);
+        Image icon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLayout(new BorderLayout());
         this.setSize(600, 600);
@@ -49,7 +51,7 @@ public class NameMenu extends JDialog implements MouseListener, ActionListener, 
         namefield.setLayout(new GridLayout());
         namefield.setFont(new Font("Dubai", Font.BOLD, 26));
         namefield.setForeground(Color.LIGHT_GRAY);
-        namefield.setBorder(new LineBorder(Color.BLACK));
+        namefield.setBorder(new CompoundBorder(new LineBorder(Color.BLACK), new EmptyBorder(0, 0, 0, 20)));
         namefield.setHorizontalAlignment(0);
         namefield.setCaretPosition(namefield.getText().length());
         namefield.addMouseListener(this);
@@ -71,11 +73,17 @@ public class NameMenu extends JDialog implements MouseListener, ActionListener, 
     }
 
     public boolean Userinput() {
-        return button_pressed && !Objects.equals(namefield.getText(), "Please enter your name here");
+        return button_pressed && !(Objects.equals(namefield.getText(), "Please enter your name here") ||
+                Objects.equals(namefield.getText(), ""));
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         if (Username == null) return "";
+        char first = Username.charAt(0);
+        if(Character.isLowerCase(first)){
+            first = Character.toUpperCase(first);
+            Username = first + Username.substring(1);
+        }
         return Username;
     }
 
@@ -134,7 +142,7 @@ public class NameMenu extends JDialog implements MouseListener, ActionListener, 
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == 10 && e.getSource() == namefield){
+        if (e.getKeyCode() == 10 && e.getSource() == namefield) {
             Username = namefield.getText();
             namefield.setEnabled(false);
             button_pressed = true;
