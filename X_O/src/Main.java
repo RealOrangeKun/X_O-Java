@@ -20,7 +20,7 @@ public class Main {
             System.out.println("User canceled");
             System.exit(0);
         }
-        MainMenu mainMenu = new MainMenu();
+        new MainMenu();
 
     }
 }
