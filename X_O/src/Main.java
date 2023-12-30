@@ -1,5 +1,8 @@
 // Author: Orangekun
 // Last Modified: 30-12-2023
+/* If you want to run the code with the music and logos change the path in the classes (I am sorry)
+   or you can just run the JAR file or the EXE file honestly I would do that
+*/
 
 
 
@@ -7,6 +10,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.io.IOException;
+
 
 
 public class Main {
@@ -21,6 +25,5 @@ public class Main {
             System.exit(0);
         }
         new MainMenu();
-
     }
 }

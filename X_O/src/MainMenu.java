@@ -34,19 +34,26 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         settings = new JButton("Settings");
         exit = new JButton("Exit");
         start.setPreferredSize(new Dimension(150, 50));
-        settings.setPreferredSize(new Dimension(100, 50));
-        exit.setPreferredSize(new Dimension(100, 50));
+        settings.setPreferredSize(new Dimension(150, 50));
+        exit.setPreferredSize(new Dimension(150, 50));
         start.setBackground(Color.white);
         settings.setBackground(Color.white);
         exit.setBackground(Color.white);
         exit.addActionListener(this);
         start.addMouseListener(this);
+        start.addActionListener(this);
         settings.addActionListener(this);
         settings.addMouseListener(this);
         exit.addMouseListener(this);
         Image starticon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(40, 40, 100);
+        Image settingsicon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\settings.png").getImage().getScaledInstance(40, 40, 100);
+        Image exiticon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\exit.png").getImage().getScaledInstance(60, 60, 100);
+        settings.setIcon(new ImageIcon(settingsicon));
         start.setIcon(new ImageIcon(starticon));
+        exit.setIcon(new ImageIcon(exiticon));
+        settings.setIconTextGap(20);
         start.setIconTextGap(20);
+        exit.setIconTextGap(20);
 
         JPanel startPanel = createButtonPanel(start, buttonSpacing);
         JPanel settingsPanel = createButtonPanel(settings, buttonSpacing);
@@ -90,7 +97,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.setSize(new Dimension(350, 600));
         this.setLocation((int) (screenSize.getWidth() - this.getWidth()) / 2,
                 (int) (screenSize.getHeight() - this.getHeight()) / 2);
-        this.setTitle("X_O");
+        this.setTitle("X O Menu");
         this.setResizable(false);
         this.pack();
         this.setVisible(true);
@@ -170,6 +177,9 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         } else if (e.getSource() == settings) {
             sm.setVisible(true);
             this.setVisible(false);
+        } else if (e.getSource()==start) {
+            this.setVisible(false);
+            new XOBoard(this);
         }
     }
 }

@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class SettingsMenu extends JFrame implements ActionListener, MouseListener {
     private final Image icon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
     private JPanel middlePanel;
-    private JButton music, fullscreen, color;
+    private JButton music, fullscreen, back;
     private Color backgroundColor = new Color(1, 2, 64);
 
     private static boolean musicplaying = true;
@@ -15,26 +15,25 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
     private static boolean isFullScreen =false;
 
     SettingsMenu(JFrame menu) {
-
         mainmenu = menu;
         music = new JButton("Music ON");
         fullscreen = new JButton("Fullscreen OFF");
-        color = new JButton("Change Color");
+        back = new JButton("Back");
         music.setPreferredSize(new Dimension(150, 50));
         fullscreen.setPreferredSize(new Dimension(150, 50));
-        color.setPreferredSize(new Dimension(150, 50));
+        back.setPreferredSize(new Dimension(150, 50));
         setButtonsSettings();
 
         JPanel musicpanel = createButtonPanel(music, 50);
         JPanel fullscreenpanel = createButtonPanel(fullscreen, 50);
-        JPanel colorpanel = createButtonPanel(color, 50);
+        JPanel backpanel = createButtonPanel(back, 50);
 
 
         middlePanel = new JPanel(new GridLayout(3, 1, 50, 50));
         middlePanel.setBackground(backgroundColor);
         middlePanel.add(musicpanel);
         middlePanel.add(fullscreenpanel);
-        middlePanel.add(colorpanel);
+        middlePanel.add(backpanel);
 
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -65,13 +64,13 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
         music.addActionListener(this);
         music.addMouseListener(this);
         fullscreen.addMouseListener(this);
-        color.addMouseListener(this);
+        back.addMouseListener(this);
         music.setFocusable(false);
         fullscreen.setFocusable(false);
-        color.setFocusable(false);
+        back.setFocusable(false);
         music.setBackground(Color.white);
         fullscreen.setBackground(Color.white);
-        color.setBackground(Color.white);
+        back.setBackground(Color.white);
     }
     private static void toggleFullScreen(JFrame frame) {
         GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -121,6 +120,10 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
             toggleFullScreen(mainmenu);
             fullscreen.setText((isFullScreen)? "Fullscreen ON": "Fullscreen OFF");
         }
+        else if(e.getSource() == back){
+            this.setVisible(false);
+            mainmenu.setVisible(true);
+        }
     }
 
     @Override
@@ -134,8 +137,8 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
             music.setBackground(new Color(105, 186, 240));
         } else if (e.getSource() == fullscreen) {
             fullscreen.setBackground(new Color(105, 186, 240));
-        } else if (e.getSource() == color) {
-            color.setBackground(new Color(105, 186, 240));
+        } else if (e.getSource() == back) {
+            back.setBackground(new Color(105, 186, 240));
         }
     }
 
@@ -145,8 +148,12 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
             music.setBackground(Color.white);
         } else if (e.getSource() == fullscreen) {
             fullscreen.setBackground(Color.white);
-        } else if (e.getSource() == color) {
-            color.setBackground(Color.white);
+        } else if (e.getSource() == back) {
+            back.setBackground(Color.white);
         }
+    }
+
+    public static boolean IsFullScreen(){
+        return isFullScreen;
     }
 }
