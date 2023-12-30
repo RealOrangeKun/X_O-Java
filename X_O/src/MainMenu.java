@@ -73,6 +73,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.setSize(new Dimension(350, 600));
         this.setLocation((int) (screenSize.getWidth() - this.getWidth()) / 2,
                 (int) (screenSize.getHeight() - this.getHeight()) / 2);
+        this.setTitle("X_O");
         this.setResizable(false);
         this.pack();
         this.setVisible(true);
