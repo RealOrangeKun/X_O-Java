@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 public class XOBoard extends JFrame implements ActionListener, MouseListener {
     private Color backgroundColor = new Color(1, 2, 64);
-    private final Image icon = new ImageIcon("F:\\X_O-Java\\X_O\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
+    private final Image icon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
 
     private JButton[] buttons = new JButton[]{
             new JButton(),
