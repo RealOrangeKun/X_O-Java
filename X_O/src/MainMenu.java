@@ -5,6 +5,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainMenu extends JFrame implements MouseListener, KeyListener, ActionListener {
     private JButton start, settings, exit;
@@ -13,14 +15,21 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     private SettingsMenu sm;
     private final int buttonSpacing = 50;
     private Color backgroundColor = new Color(1, 2, 64);
-    private final Image icon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
+    private final Image icon = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
+
+
+    private String Username;
 
     MainMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
+        Username = JOptionPane.showInputDialog(this, "Please enter your name", "Username", JOptionPane.QUESTION_MESSAGE);
+        while (!ValidUsername()) {
+            Username = JOptionPane.showInputDialog(this, "Please enter a valid name!", "Username", JOptionPane.QUESTION_MESSAGE);
+        }
         sm = new SettingsMenu(this);
         sm.setVisible(false);
         topPanel = new JPanel(new GridLayout(1, 1));
         middlePanel = new JPanel(new GridLayout(3, 1));
-        JLabel welcome = new JLabel("Welcome " + NameMenu.getUsername() + "!");
+        JLabel welcome = new JLabel("Welcome " + ((getUsername().equals("Zura")) ? "Sharmoota": getUsername()) + "!");
         welcome.setHorizontalAlignment(0);
         welcome.setBorder(new EmptyBorder(50, 50, 0, 50));
         welcome.setFont(new Font("Dubai", Font.BOLD, 26));
@@ -45,9 +54,9 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         settings.addActionListener(this);
         settings.addMouseListener(this);
         exit.addMouseListener(this);
-        Image starticon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(40, 40, 100);
-        Image settingsicon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\settings.png").getImage().getScaledInstance(40, 40, 100);
-        Image exiticon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\exit.png").getImage().getScaledInstance(60, 60, 100);
+        Image starticon = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(40, 40, 100);
+        Image settingsicon = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\settings.png").getImage().getScaledInstance(40, 40, 100);
+        Image exiticon = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\exit.png").getImage().getScaledInstance(60, 60, 100);
         settings.setIcon(new ImageIcon(settingsicon));
         start.setIcon(new ImageIcon(starticon));
         exit.setIcon(new ImageIcon(exiticon));
@@ -86,7 +95,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+                Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
                 int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
                         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
                 if (response == 0) {
@@ -101,7 +110,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.setResizable(false);
         this.pack();
         this.setVisible(true);
-        MusicPlayer.playmusic(System.getProperty("user.dir")+"\\src\\resources\\music2.wav");
+        MusicPlayer.playmusic(System.getProperty("user.dir") + "\\src\\resources\\music2.wav");
         MusicPlayer.waitForPlayback();
     }
 
@@ -167,7 +176,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exit) {
-            Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+            Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
             int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
             if (response == 0) {
@@ -177,9 +186,24 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         } else if (e.getSource() == settings) {
             sm.setVisible(true);
             this.setVisible(false);
-        } else if (e.getSource()==start) {
+        } else if (e.getSource() == start) {
             this.setVisible(false);
             new XOBoard(this);
         }
+    }
+
+    public String getUsername() {
+        if (Username == null) return "";
+        char first = Username.charAt(0);
+        if (Character.isLowerCase(first)) {
+            first = Character.toUpperCase(first);
+            Username = first + Username.substring(1);
+        }
+        return Username;
+    }
+
+    private boolean ValidUsername() {
+        if(Username == null) System.exit(0);
+        return (Username.length() < 15 && !Pattern.compile("[^a-zA-Z]").matcher(Username).find() && !Username.isEmpty());
     }
 }
