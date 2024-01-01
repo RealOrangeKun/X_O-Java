@@ -11,7 +11,6 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     private JButton start, settings, exit;
     private JPanel topPanel, middlePanel;
 
-    private SettingsMenu sm;
     private final int buttonSpacing = 50;
     private Color backgroundColor = new Color(1, 2, 64);
     private final Image icon = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
@@ -21,8 +20,6 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
 
     MainMenu(String name) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
         Username = name;
-        sm = new SettingsMenu();
-        sm.setVisible(false);
         topPanel = new JPanel(new GridLayout(1, 1));
         middlePanel = new JPanel(new GridLayout(3, 1));
         JLabel welcome = new JLabel("Welcome " + ((getUsername().equals("Zura")) ? "Sharmoota": getUsername()) + "!");
@@ -159,15 +156,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == exit) {
-            Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
-            int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
-                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
-            if (response == 0) {
-                this.dispose();
-                System.exit(0);
-            }
-        }
+
     }
 
     public String getUsername() {
@@ -192,4 +181,9 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     public JButton getStart() {
         return start;
     }
+
+    public JButton getExit() {
+        return exit;
+    }
+
 }

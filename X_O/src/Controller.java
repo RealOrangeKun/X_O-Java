@@ -16,6 +16,7 @@ public class Controller {
         MusicPlayer.playmusic(System.getProperty("user.dir") + "\\src\\resources\\music2.wav");
         Controller.mainMenu = mainMenu;
         Controller.settingsMenu = settingsMenu;
+        Controller.xoBoard = xoBoard;
         mainMenu.getSettings().addActionListener(e -> {
             Controller.mainMenu.setVisible(false);
             Controller.settingsMenu.setVisible(true);
@@ -23,13 +24,15 @@ public class Controller {
         mainMenu.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
-                int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
-                if (response == 0) {
-                    System.exit(0);
-                }
+                ExitPrompt();
             }
+        });
+        mainMenu.getExit().addActionListener(e->{
+            ExitPrompt();
+        });
+        mainMenu.getStart().addActionListener(e->{
+            Controller.mainMenu.setVisible(false);
+            Controller.xoBoard.setVisible(true);
         });
         settingsMenu.getBack().addActionListener(e -> {
             Controller.settingsMenu.setVisible(false);
@@ -45,6 +48,7 @@ public class Controller {
         settingsMenu.getFullscreen().addActionListener(e->{
             toggleFullScreen(Controller.settingsMenu);
             toggleFullScreen(Controller.mainMenu);
+            toggleFullScreen(Controller.xoBoard);
             Controller.settingsMenu.getFullscreen().setText((SettingsMenu.IsFullScreen())? "Fullscreen ON": "Fullscreen OFF");
         });
         settingsMenu.getMusic().addActionListener(e->{
@@ -55,6 +59,12 @@ public class Controller {
             else{
                 MusicPlayer.resumePlayback();
                 Controller.settingsMenu.getMusic().setText("Music ON");
+            }
+        });
+        xoBoard.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ExitPrompt();
             }
         });
 
@@ -69,6 +79,14 @@ public class Controller {
         } else {
             frame.setExtendedState(JFrame.NORMAL);
             SettingsMenu.setIsFullScreen(false);
+        }
+    }
+    private void ExitPrompt(){
+        Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+        int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
+        if (response == 0) {
+            System.exit(0);
         }
     }
 }

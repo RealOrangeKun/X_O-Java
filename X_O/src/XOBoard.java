@@ -6,19 +6,27 @@ import java.util.Arrays;
 
 public class XOBoard extends JFrame implements ActionListener, MouseListener {
     private Color backgroundColor = new Color(1, 2, 64);
-    private final Image icon = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
+    private final Image icon = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
 
-    private JButton[] buttons = new JButton[]{
-            new JButton(),
-            new JButton(),
-            new JButton(),
-            new JButton(),
-            new JButton(),
-            new JButton(),
-            new JButton(),
-            new JButton(),
-            new JButton(),
+    private JButton[][] buttons = new JButton[][]{
+            new JButton[]{
+                    new JButton(),
+                    new JButton(),
+                    new JButton()
+            },
+            new JButton[]{
+                    new JButton(),
+                    new JButton(),
+                    new JButton()
+            },
+            new JButton[]{
+                    new JButton(),
+                    new JButton(),
+                    new JButton(),
+            }
     };
+
+
     private JPanel middlepanel, topPanel;
     private JLabel label;
     private int NOfMoves;
@@ -26,15 +34,17 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     XOBoard() {
         NOfMoves = 0;
         middlepanel = new JPanel(new GridLayout(3, 3, 20, 20));
-        Arrays.stream(buttons).forEach(b -> {
-            b.addMouseListener(this);
-            b.setFocusable(false);
-            b.setFont(new Font("Dubai", Font.BOLD, 40));
-            b.setBackground(Color.WHITE);
-            b.addActionListener(this);
-            middlepanel.add(b);
+        Arrays.stream(buttons).forEach(ab -> {
+            Arrays.stream(ab).forEach(b -> {
+                b.addMouseListener(this);
+                b.setFocusable(false);
+                b.setFont(new Font("Dubai", Font.BOLD, 40));
+                b.setBackground(Color.WHITE);
+                b.addActionListener(this);
+                middlepanel.add(b);
+            });
         });
-        buttons[0].setPreferredSize(new Dimension(150, 150));
+        buttons[0][0].setPreferredSize(new Dimension(150, 150));
         middlepanel.setBorder(new EmptyBorder(50, 50, 50, 50));
         middlepanel.setBackground(backgroundColor);
         topPanel = new JPanel(new FlowLayout());
@@ -47,17 +57,6 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
 
         this.setSize(new Dimension(750, 750));
         this.setTitle("X O Game");
-        this.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
-                int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
-                if (response == 0) {
-                    System.exit(0);
-                }
-            }
-        });
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLocation((int) (screenSize.getWidth() - this.getWidth()) / 2,
                 (int) (screenSize.getHeight() - this.getHeight()) / 2);
@@ -65,97 +64,90 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         this.setIconImage(icon);
         this.add(topPanel, BorderLayout.NORTH);
         this.add(middlepanel, BorderLayout.CENTER);
-        if (SettingsMenu.IsFullScreen()) {
-            toggleFullScreen(this);
-        }
         this.setResizable(false);
         this.setBackground(backgroundColor);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        for (JButton b : buttons) {
-            if (e.getSource() == b && !GameIsOver()) {
-                b.setText((NOfMoves % 2 == 0) ? "X" : "O");
-                b.setEnabled(false);
-                NOfMoves++;
-            }
-        }
+        Arrays.stream(buttons).forEach(ab -> {
+            Arrays.stream(ab).forEach(b -> {
+                if (e.getSource() == b && !GameIsOver()) {
+                    b.setText((NOfMoves % 2 == 0) ? "X" : "O");
+                    b.setEnabled(false);
+                    NOfMoves++;
+                }
+            });
+        });
     }
 
-
     public void ClearBoard() {
-        for (JButton b : buttons) {
-            b.setText("");
-            b.setEnabled(true);
-        }
+        Arrays.stream(buttons).forEach(ab->{
+            Arrays.stream(ab).forEach(b->{
+                b.setText("");
+                b.setEnabled(true);
+            });
+        });
         label.setText("     ");
         NOfMoves = 0;
     }
 
     public boolean IsWinner() {
+        // Check rows
         for (int i = 0; i < 3; i++) {
-            int startIndex = i * 3;
-            if (buttons[startIndex].getText().equals(buttons[startIndex + 1].getText()) &&
-                    buttons[startIndex + 1].getText().equals(buttons[startIndex + 2].getText())) {
-                if (buttons[startIndex].getText().equals("X")) {
-                    label.setText("X Wins!");
+            if (buttons[i][0].getText().equals(buttons[i][1].getText()) &&
+                    buttons[i][1].getText().equals(buttons[i][2].getText())) {
+                if (buttons[i][0].getText().equals("X")) {
+                    showGameEndPrompt("X Wins!");
                     return true;
-                } else if (buttons[startIndex].getText().equals("O")) {
-                    label.setText("O Wins!");
+                } else if (buttons[i][0].getText().equals("O")) {
+                    showGameEndPrompt("O Wins!");
                     return true;
                 }
             }
         }
+
+        // Check columns
         for (int i = 0; i < 3; i++) {
-            if (buttons[i].getText().equals(buttons[i + 3].getText()) &&
-                    buttons[i + 3].getText().equals(buttons[i + 6].getText())) {
-                if (buttons[i].getText().equals("X")) {
-                    label.setText("X Wins!");
+            if (buttons[0][i].getText().equals(buttons[1][i].getText()) &&
+                    buttons[1][i].getText().equals(buttons[2][i].getText())) {
+                if (buttons[0][i].getText().equals("X")) {
+                    showGameEndPrompt("X Wins!");
                     return true;
-                } else if (buttons[i].getText().equals("O")) {
-                    label.setText("O Wins!");
+                } else if (buttons[0][i].getText().equals("O")) {
+                    showGameEndPrompt("O Wins!");
                     return true;
                 }
             }
         }
-        if (buttons[0].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[8].getText())) {
-            if (buttons[0].getText().equals("X")) {
-                label.setText("X Wins!");
+
+        // Check diagonals
+        if (buttons[0][0].getText().equals(buttons[1][1].getText()) && buttons[1][1].getText().equals(buttons[2][2].getText())) {
+            if (buttons[0][0].getText().equals("X")) {
+                showGameEndPrompt("X Wins!");
                 return true;
-            } else if (buttons[0].getText().equals("O")) {
-                label.setText("O Wins!");
-                return true;
-            }
-        }
-        if (buttons[2].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[6].getText())) {
-            if (buttons[2].getText().equals("X")) {
-                label.setText("X Wins!");
-                return true;
-            } else if (buttons[2].getText().equals("O")) {
-                label.setText("O Wins!");
+            } else if (buttons[0][0].getText().equals("O")) {
+                showGameEndPrompt("O Wins!");
                 return true;
             }
         }
+
+        if (buttons[0][2].getText().equals(buttons[1][1].getText()) && buttons[1][1].getText().equals(buttons[2][0].getText())) {
+            if (buttons[0][2].getText().equals("X")) {
+                showGameEndPrompt("X Wins!");
+                return true;
+            } else if (buttons[0][2].getText().equals("O")) {
+                showGameEndPrompt("O Wins!");
+                return true;
+            }
+        }
+
         return false;
     }
 
+
     public boolean GameIsOver() {
-        if (NOfMoves >= 9 || IsWinner()) {
-            Image icon2 = new ImageIcon(System.getProperty("user.dir")+"\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
-            String[] s = {"Play Again", "Exit", "Main Menu"};
-            int response = JOptionPane.showOptionDialog(null, "Do you want to play again?", "Confirm",
-                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2), s, 0);
-            if (response == 0) {
-                ClearBoard();
-            } else if(response == 1){
-                System.exit(0);
-            }
-            else{
-                this.setVisible(false);
-            }
-        }
-        return false;
+        return (NOfMoves >= 9 || IsWinner());
     }
 
     @Override
@@ -171,15 +163,19 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         if (NOfMoves >= 9 && !IsWinner()) {
-            label.setText("Draw!");
-            for (JButton b : buttons) {
-                b.setEnabled(false);
-            }
+            showGameEndPrompt("Draw!");
+            Arrays.stream(buttons).forEach(ab->{
+                Arrays.stream(ab).forEach(b->{
+                    b.setEnabled(false);
+                });
+            });
         }
         if (GameIsOver()) {
-            for (JButton b : buttons) {
-                b.setEnabled(false);
-            }
+            Arrays.stream(buttons).forEach(ab->{
+                Arrays.stream(ab).forEach(b->{
+                    b.setEnabled(false);
+                });
+            });
         }
     }
 
@@ -192,17 +188,27 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
-    public static void toggleFullScreen(JFrame frame) {
-        GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        GraphicsDevice graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
 
-        if (frame.getExtendedState() != JFrame.MAXIMIZED_BOTH) {
-            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        } else {
-            frame.setExtendedState(JFrame.NORMAL);
-        }
+    public JButton[][] getButtons() {
+        return buttons;
     }
-    public void disableAllButtons(){
-        Arrays.stream(buttons).forEach(b -> b.setEnabled(false));
+
+    public int getNOfMoves() {
+        return NOfMoves;
+    }
+    private void showGameEndPrompt(String message) {
+        Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
+        String[] s = {"Play Again", "Exit", "Main Menu"};
+        JLabel prompt = new JLabel(message);
+        prompt.setFont(new Font("Dubai", Font.BOLD, 16));
+        int response = JOptionPane.showOptionDialog(null, prompt, "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2), s, 0);
+        if (response == 0) {
+            ClearBoard();
+        } else if (response == 1) {
+            System.exit(0);
+        } else {
+            this.setVisible(false);
+        }
     }
 }

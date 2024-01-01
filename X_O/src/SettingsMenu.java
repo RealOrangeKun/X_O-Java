@@ -8,8 +8,6 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
     private JButton music, fullscreen, back;
     private Color backgroundColor = new Color(1, 2, 64);
 
-    private static boolean musicplaying = true;
-
 
     private static boolean isFullScreen =false;
 
