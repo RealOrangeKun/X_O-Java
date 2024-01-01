@@ -8,7 +8,6 @@ public class AIPlayer {
 
     }
 
-
     public char getSymbol() {
         return symbol;
     }
