@@ -5,7 +5,6 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainMenu extends JFrame implements MouseListener, KeyListener, ActionListener {
@@ -18,14 +17,11 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     private final Image icon = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(300, 300, 900);
 
 
-    private String Username;
+    private static String Username;
 
-    MainMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
-        Username = JOptionPane.showInputDialog(this, "Please enter your name", "Username", JOptionPane.QUESTION_MESSAGE);
-        while (!ValidUsername()) {
-            Username = JOptionPane.showInputDialog(this, "Please enter a valid name!", "Username", JOptionPane.QUESTION_MESSAGE);
-        }
-        sm = new SettingsMenu(this);
+    MainMenu(String name) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
+        Username = name;
+        sm = new SettingsMenu();
         sm.setVisible(false);
         topPanel = new JPanel(new GridLayout(1, 1));
         middlePanel = new JPanel(new GridLayout(3, 1));
@@ -92,17 +88,6 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.add(topPanel, BorderLayout.NORTH);
         this.add(middlePanel, BorderLayout.CENTER);
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        this.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
-                int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Confirm",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2));
-                if (response == 0) {
-                    System.exit(0);
-                }
-            }
-        });
         this.setSize(new Dimension(350, 600));
         this.setLocation((int) (screenSize.getWidth() - this.getWidth()) / 2,
                 (int) (screenSize.getHeight() - this.getHeight()) / 2);
@@ -110,8 +95,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         this.setResizable(false);
         this.pack();
         this.setVisible(true);
-        MusicPlayer.playmusic(System.getProperty("user.dir") + "\\src\\resources\\music2.wav");
-        MusicPlayer.waitForPlayback();
+
     }
 
     private JPanel createButtonPanel(JButton button, int spacing) {
@@ -183,12 +167,6 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
                 this.dispose();
                 System.exit(0);
             }
-        } else if (e.getSource() == settings) {
-            sm.setVisible(true);
-            this.setVisible(false);
-        } else if (e.getSource() == start) {
-            this.setVisible(false);
-            new XOBoard(this);
         }
     }
 
@@ -202,8 +180,16 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         return Username;
     }
 
-    private boolean ValidUsername() {
-        if(Username == null) System.exit(0);
-        return (Username.length() < 15 && !Pattern.compile("[^a-zA-Z]").matcher(Username).find() && !Username.isEmpty());
+    public static boolean ValidUsername(String s) {
+        if(s == null) System.exit(0);
+        return (s.length() < 15 && !Pattern.compile("[^a-zA-Z]").matcher(s).find() && !s.isEmpty());
+    }
+
+    public JButton getSettings() {
+        return settings;
+    }
+
+    public JButton getStart() {
+        return start;
     }
 }

@@ -10,19 +10,28 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
 
     private static boolean musicplaying = true;
 
-    private JFrame mainmenu;
 
     private static boolean isFullScreen =false;
 
-    SettingsMenu(JFrame menu) {
-        mainmenu = menu;
+    SettingsMenu() {
         music = new JButton("Music ON");
         fullscreen = new JButton("Fullscreen OFF");
         back = new JButton("Back");
         music.setPreferredSize(new Dimension(150, 50));
         fullscreen.setPreferredSize(new Dimension(150, 50));
         back.setPreferredSize(new Dimension(150, 50));
-        setButtonsSettings();
+        music.addActionListener(this);
+        fullscreen.addActionListener(this);
+        music.addActionListener(this);
+        music.addMouseListener(this);
+        fullscreen.addMouseListener(this);
+        back.addActionListener(this);
+        music.setFocusable(false);
+        fullscreen.setFocusable(false);
+        back.setFocusable(false);
+        music.setBackground(Color.white);
+        fullscreen.setBackground(Color.white);
+        back.setBackground(Color.white);
 
         JPanel musicpanel = createButtonPanel(music, 50);
         JPanel fullscreenpanel = createButtonPanel(fullscreen, 50);
@@ -38,7 +47,6 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(new Dimension(350, 600));
-        this.enableMain(menu);
         this.setLayout(new BorderLayout());
         this.setResizable(false);
         this.setLocation((int) (screenSize.getWidth() - this.getWidth()) / 2,
@@ -47,7 +55,6 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
         this.add(middlePanel, BorderLayout.CENTER);
         this.setTitle("Settings");
         this.pack();
-        this.setVisible(true);
     }
 
     private JPanel createButtonPanel(JButton button, int spacing) {
@@ -58,42 +65,7 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
         return panel;
     }
 
-    private void setButtonsSettings() {
-        music.addActionListener(this);
-        fullscreen.addActionListener(this);
-        music.addActionListener(this);
-        music.addMouseListener(this);
-        fullscreen.addMouseListener(this);
-        back.addMouseListener(this);
-        music.setFocusable(false);
-        fullscreen.setFocusable(false);
-        back.setFocusable(false);
-        music.setBackground(Color.white);
-        fullscreen.setBackground(Color.white);
-        back.setBackground(Color.white);
-    }
-    private static void toggleFullScreen(JFrame frame) {
-        GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        GraphicsDevice graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
 
-        if (frame.getExtendedState() != JFrame.MAXIMIZED_BOTH) {
-            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-            isFullScreen = true;
-        } else {
-            frame.setExtendedState(JFrame.NORMAL);
-            isFullScreen = false;
-        }
-    }
-
-    private void enableMain(JFrame m) {
-        this.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                m.setVisible(true);
-            }
-        });
-        this.setVisible(false);
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -107,23 +79,7 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if (e.getSource() == music) {
-            if (!MusicPlayer.isPlaying()) {
-                MusicPlayer.resumePlayback();
-            } else {
-                MusicPlayer.pausePlayback();
-            }
-            music.setText((MusicPlayer.isPlaying()) ? "Music ON" : "Music OFF");
-        }
-        else if(e.getSource()==fullscreen){
-            toggleFullScreen(this);
-            toggleFullScreen(mainmenu);
-            fullscreen.setText((isFullScreen)? "Fullscreen ON": "Fullscreen OFF");
-        }
-        else if(e.getSource() == back){
-            this.setVisible(false);
-            mainmenu.setVisible(true);
-        }
+
     }
 
     @Override
@@ -155,5 +111,21 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
 
     public static boolean IsFullScreen(){
         return isFullScreen;
+    }
+
+    public JButton getBack() {
+        return back;
+    }
+
+    public JButton getFullscreen() {
+        return fullscreen;
+    }
+
+    public static void setIsFullScreen(boolean isFullScreen) {
+        SettingsMenu.isFullScreen = isFullScreen;
+    }
+
+    public JButton getMusic() {
+        return music;
     }
 }
