@@ -209,7 +209,10 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
             System.exit(0);
         } else {
             this.setVisible(false);
+
             Controller.getMainMenu().setVisible(true);
+
+
         }
     }
 }
