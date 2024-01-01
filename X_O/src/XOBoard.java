@@ -82,8 +82,8 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     }
 
     public void ClearBoard() {
-        Arrays.stream(buttons).forEach(ab->{
-            Arrays.stream(ab).forEach(b->{
+        Arrays.stream(buttons).forEach(ab -> {
+            Arrays.stream(ab).forEach(b -> {
                 b.setText("");
                 b.setEnabled(true);
             });
@@ -163,19 +163,20 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         if (NOfMoves >= 9 && !IsWinner()) {
-            showGameEndPrompt("Draw!");
-            Arrays.stream(buttons).forEach(ab->{
-                Arrays.stream(ab).forEach(b->{
+            Arrays.stream(buttons).forEach(ab -> {
+                Arrays.stream(ab).forEach(b -> {
                     b.setEnabled(false);
                 });
             });
+            showGameEndPrompt("Draw!");
         }
         if (GameIsOver()) {
-            Arrays.stream(buttons).forEach(ab->{
-                Arrays.stream(ab).forEach(b->{
+            Arrays.stream(buttons).forEach(ab -> {
+                Arrays.stream(ab).forEach(b -> {
                     b.setEnabled(false);
                 });
             });
+            ClearBoard();
         }
     }
 
@@ -196,6 +197,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     public int getNOfMoves() {
         return NOfMoves;
     }
+
     private void showGameEndPrompt(String message) {
         Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
         String[] s = {"Play Again", "Exit", "Main Menu"};
@@ -209,10 +211,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
             System.exit(0);
         } else {
             this.setVisible(false);
-
             Controller.getMainMenu().setVisible(true);
-
-
         }
     }
 }
