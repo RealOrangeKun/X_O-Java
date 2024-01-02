@@ -49,7 +49,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         middlepanel.setBackground(backgroundColor);
         topPanel = new JPanel(new FlowLayout());
         topPanel.setBorder(new EmptyBorder(20, 20, 0, 20));
-        label = new JLabel("     ");
+        label = new JLabel("X's Turn");
         topPanel.add(label);
         topPanel.setBackground(backgroundColor);
         label.setFont(new Font("Dubai", Font.BOLD, 45));
@@ -88,7 +88,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
                 b.setEnabled(true);
             });
         });
-        label.setText("     ");
+        label.setText("X's Turn");
         NOfMoves = 0;
     }
 
@@ -163,20 +163,17 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         if (NOfMoves >= 9 && !IsWinner()) {
-            Arrays.stream(buttons).forEach(ab -> {
-                Arrays.stream(ab).forEach(b -> {
-                    b.setEnabled(false);
-                });
-            });
+            DisableAllButtons();
+            label.setText("  ");
             showGameEndPrompt("Draw!");
+
         }
         if (GameIsOver()) {
-            Arrays.stream(buttons).forEach(ab -> {
-                Arrays.stream(ab).forEach(b -> {
-                    b.setEnabled(false);
-                });
-            });
+            DisableAllButtons();
             ClearBoard();
+        }
+        else{
+            label.setText((NOfMoves%2 ==0 )? "X's Turn": "O's Turn");
         }
     }
 
@@ -199,6 +196,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     }
 
     private void showGameEndPrompt(String message) {
+        label.setText("  ");
         Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
         String[] s = {"Play Again", "Exit", "Main Menu"};
         JLabel prompt = new JLabel(message);
@@ -213,5 +211,18 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
             this.setVisible(false);
             Controller.getMainMenu().setVisible(true);
         }
+    }
+    public void DisableAllButtons(){
+        Arrays.stream(buttons).forEach(ab -> {
+            Arrays.stream(ab).forEach(b -> {
+                b.setEnabled(false);
+            });
+        });
+    }
+
+    public void ChangeColor(Color newcolor){
+        label.setBackground(newcolor);
+        topPanel.setBackground(newcolor);
+        middlepanel.setBackground(newcolor);
     }
 }

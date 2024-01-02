@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class MainMenu extends JFrame implements MouseListener, KeyListener, ActionListener {
     private JButton start, settings, exit;
-    private JPanel topPanel, middlePanel;
+    private JPanel topPanel, middlePanel, startPanel, settingsPanel, exitPanel;
 
     private final int buttonSpacing = 50;
     private Color backgroundColor = new Color(1, 2, 64);
@@ -22,7 +22,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         Username = name;
         topPanel = new JPanel(new GridLayout(1, 1));
         middlePanel = new JPanel(new GridLayout(3, 1));
-        JLabel welcome = new JLabel("Welcome " + ((getUsername().equals("Zura")) ? "Sharmoota": getUsername()) + "!");
+        JLabel welcome = new JLabel("Welcome " + ((getUsername().equals("Zura")) ? "Sharmoota" : getUsername()) + "!");
         welcome.setHorizontalAlignment(0);
         welcome.setBorder(new EmptyBorder(50, 50, 0, 50));
         welcome.setFont(new Font("Dubai", Font.BOLD, 26));
@@ -57,9 +57,9 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         start.setIconTextGap(20);
         exit.setIconTextGap(20);
 
-        JPanel startPanel = createButtonPanel(start, buttonSpacing);
-        JPanel settingsPanel = createButtonPanel(settings, buttonSpacing);
-        JPanel exitPanel = createButtonPanel(exit, buttonSpacing);
+        startPanel = createButtonPanel(start, buttonSpacing);
+        settingsPanel = createButtonPanel(settings, buttonSpacing);
+        exitPanel = createButtonPanel(exit, buttonSpacing);
         startPanel.setBackground(new Color(2, 3, 74));
         settingsPanel.setBackground(new Color(2, 3, 74));
         exitPanel.setBackground(new Color(2, 3, 74));
@@ -170,7 +170,7 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
     }
 
     public static boolean ValidUsername(String s) {
-        if(s == null) System.exit(0);
+        if (s == null) System.exit(0);
         return (s.length() < 15 && !Pattern.compile("[^a-zA-Z]").matcher(s).find() && !s.isEmpty());
     }
 
@@ -186,4 +186,11 @@ public class MainMenu extends JFrame implements MouseListener, KeyListener, Acti
         return exit;
     }
 
+    public void ChangeColor(Color newcolor) {
+        startPanel.setBackground(newcolor);
+        settingsPanel.setBackground(newcolor);
+        exitPanel.setBackground(newcolor);
+        topPanel.setBackground(newcolor.darker());
+        middlePanel.setBackground(newcolor.darker());
+    }
 }

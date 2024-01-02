@@ -1,19 +1,22 @@
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.IOException;
 
 public class Controller {
     private static MainMenu mainMenu;
     private static SettingsMenu settingsMenu;
+    private final String defualtSong = System.getProperty("user.dir") + "\\src\\resources\\music2.wav";
 
     private static XOBoard xoBoard;
 
     Controller(MainMenu mainMenu, SettingsMenu settingsMenu, XOBoard xoBoard) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
-        MusicPlayer.playmusic(System.getProperty("user.dir") + "\\src\\resources\\music2.wav");
+        MusicPlayer.playmusic(defualtSong);
         Controller.mainMenu = mainMenu;
         Controller.settingsMenu = settingsMenu;
         Controller.xoBoard = xoBoard;
@@ -61,6 +64,18 @@ public class Controller {
                 Controller.settingsMenu.getMusic().setText("Music ON");
             }
         });
+        settingsMenu.getChangeMusic().addActionListener(e-> openNewMusic());
+        settingsMenu.getChangeColor().addActionListener(e->{
+            Color choosencolor = JColorChooser.showDialog(Controller.settingsMenu, "Choose new color", Color.BLACK);
+            if(choosencolor!=null){
+                Controller.settingsMenu.ChangeColor(choosencolor);
+                Controller.mainMenu.ChangeColor(choosencolor);
+                Controller.xoBoard.ChangeColor(choosencolor);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "You didn't choose a color!", "No color choosen", JOptionPane.ERROR_MESSAGE);
+            }
+        });
         xoBoard.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -94,6 +109,25 @@ public class Controller {
 
     public static MainMenu getMainMenu() {
         return Controller.mainMenu;
+    }
+
+    private Object openNewMusic(){
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileFilter(new FileNameExtensionFilter("Wav files", "wav"));
+        if(fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+            File selectedSong = fileChooser.getSelectedFile();
+            if(!selectedSong.getAbsolutePath().substring(selectedSong.getAbsolutePath().lastIndexOf('.') + 1).equals("wav")){
+                JOptionPane.showMessageDialog(null, "You need to choose a WAV file!", "Unsupported file chosen", JOptionPane.ERROR_MESSAGE);
+                return null;
+            }
+            try{
+                MusicPlayer.stopPlayback();
+                MusicPlayer.playmusic(selectedSong.getAbsolutePath());
+            } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return (0);
     }
 
 }

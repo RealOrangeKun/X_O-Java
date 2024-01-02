@@ -2,6 +2,7 @@ import javax.sound.sampled.*;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
 
@@ -33,14 +34,18 @@ public class MusicPlayer extends Thread {
 
     }
 
-    public static void waitForPlayback() throws InterruptedException {
-        latch.await();
-    }
-
     public static void pausePlayback() {
         if (clip != null && clip.isRunning()) {
             pausePosition = clip.getMicrosecondPosition();
             clip.stop();
+            isPlaying = false;
+        }
+    }
+
+    public static void stopPlayback() {
+        if (clip != null) {
+            clip.stop();
+            clip.close();
             isPlaying = false;
         }
     }
@@ -56,4 +61,5 @@ public class MusicPlayer extends Thread {
     public static boolean isPlaying() {
         return isPlaying;
     }
+
 }
