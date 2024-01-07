@@ -3,6 +3,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class XOBoard extends JFrame implements ActionListener, MouseListener {
     private Color backgroundColor = new Color(1, 2, 64);
@@ -49,7 +50,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         middlepanel.setBackground(backgroundColor);
         topPanel = new JPanel(new FlowLayout());
         topPanel.setBorder(new EmptyBorder(20, 20, 0, 20));
-        label = new JLabel("X's Turn");
+        label = new JLabel(Controller.getPlayer() == null ? "X's Turn": "O's Turn");
         topPanel.add(label);
         topPanel.setBackground(backgroundColor);
         label.setFont(new Font("Dubai", Font.BOLD, 45));
@@ -68,18 +69,6 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         this.setBackground(backgroundColor);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Arrays.stream(buttons).forEach(ab -> {
-            Arrays.stream(ab).forEach(b -> {
-                if (e.getSource() == b && !GameIsOver()) {
-                    b.setText((NOfMoves % 2 == 0) ? "X" : "O");
-                    b.setEnabled(false);
-                    NOfMoves++;
-                }
-            });
-        });
-    }
 
     public void ClearBoard() {
         Arrays.stream(buttons).forEach(ab -> {
@@ -88,8 +77,12 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
                 b.setEnabled(true);
             });
         });
-        label.setText("X's Turn");
+        label.setText(Controller.getPlayer() == null ? "X's Turn": "O's Turn");
         NOfMoves = 0;
+        if (Controller.getPlayer() != null) {
+            Controller.setPlayer(new AIPlayer());
+            Controller.makeAIMove();
+        }
     }
 
     public boolean IsWinner() {
@@ -162,6 +155,23 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        if (!GameIsOver()) {
+            for (int i = 0; i < buttons.length; i++) {
+                for (int j = 0; j < buttons[i].length; j++) {
+                    JButton b = buttons[i][j];
+                    if (e.getSource() == b && !GameIsOver() && b.isEnabled()) {
+                        b.setText((NOfMoves % 2 == 0) ? "X" : "O");
+                        b.setEnabled(false);
+                        NOfMoves++;
+                        if (Controller.getPlayer() != null) {
+                            Controller.getPlayer().updateBoard(i, j, 'O');
+                        }
+                    }
+                }
+            }
+
+        }
+
         if (NOfMoves >= 9 && !IsWinner()) {
             DisableAllButtons();
             label.setText("  ");
@@ -171,9 +181,12 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         if (GameIsOver()) {
             DisableAllButtons();
             ClearBoard();
+        } else {
+            label.setText(Controller.getPlayer() == null ? "X's Turn": "O's Turn");
         }
-        else{
-            label.setText((NOfMoves%2 ==0 )? "X's Turn": "O's Turn");
+        if (NOfMoves % 2 == 0 && Controller.getPlayer() != null) {
+            Controller.makeAIMove();
+            IsWinner();
         }
     }
 
@@ -196,6 +209,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     }
 
     private void showGameEndPrompt(String message) {
+        DisableAllButtons();
         label.setText("  ");
         Image icon2 = new ImageIcon(System.getProperty("user.dir") + "\\src\\resources\\icon.png").getImage().getScaledInstance(50, 50, 100);
         String[] s = {"Play Again", "Exit", "Main Menu"};
@@ -212,7 +226,8 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
             Controller.getMainMenu().setVisible(true);
         }
     }
-    public void DisableAllButtons(){
+
+    public void DisableAllButtons() {
         Arrays.stream(buttons).forEach(ab -> {
             Arrays.stream(ab).forEach(b -> {
                 b.setEnabled(false);
@@ -220,9 +235,36 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         });
     }
 
-    public void ChangeColor(Color newcolor){
+    public void ChangeColor(Color newcolor) {
         label.setBackground(newcolor);
         topPanel.setBackground(newcolor);
         middlepanel.setBackground(newcolor);
+    }
+
+    public void updateBoard(int x, int y, char symbol) {
+        buttons[x][y].setText(String.valueOf(symbol).toUpperCase());
+    }
+
+    public void EnableAllButtons() {
+        Arrays.stream(buttons).forEach(ab -> {
+            Arrays.stream(ab).forEach(b -> {
+                if (Objects.equals(b.getText(), "")) {
+                    b.setEnabled(true);
+                }
+            });
+        });
+    }
+
+    public void setNOfMoves(int NOfMoves) {
+        this.NOfMoves = NOfMoves;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+
+    public JLabel getLabel() {
+        return label;
     }
 }

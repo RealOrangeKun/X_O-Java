@@ -14,24 +14,25 @@ public class MusicPlayer extends Thread {
     private static long pausePosition = 0;
 
     public static void playmusic(String music) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        try {
-            File musicFile = new File(music);
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(musicFile);
-            clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            latch = new CountDownLatch(1);
-            clip.addLineListener(event -> {
-                if (event.getType() == LineEvent.Type.STOP) {
-                    isPlaying = false;
-                    latch.countDown();
-                }
-            });
-            clip.start();
-            isPlaying = true;
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
+        if (music != null) {
+            try {
+                File musicFile = new File(music);
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(musicFile);
+                clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                latch = new CountDownLatch(1);
+                clip.addLineListener(event -> {
+                    if (event.getType() == LineEvent.Type.STOP) {
+                        isPlaying = false;
+                        latch.countDown();
+                    }
+                });
+                clip.start();
+                isPlaying = true;
+            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+                e.printStackTrace();
+            }
         }
-
     }
 
     public static void pausePlayback() {
