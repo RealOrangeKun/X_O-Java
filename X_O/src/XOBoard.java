@@ -55,7 +55,12 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         topPanel.setBackground(backgroundColor);
         label.setFont(new Font("Dubai", Font.BOLD, 45));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                Controller.ExitPrompt();
+            }
+        });
         this.setSize(new Dimension(750, 750));
         this.setTitle("X O Game");
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -70,7 +75,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     }
 
 
-    public void ClearBoard() {
+    public void ClearBoard(boolean playAgain) {
         Arrays.stream(buttons).forEach(ab -> {
             Arrays.stream(ab).forEach(b -> {
                 b.setText("");
@@ -79,7 +84,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         });
         label.setText(Controller.getPlayer() == null ? "X's Turn": "O's Turn");
         NOfMoves = 0;
-        if (Controller.getPlayer() != null) {
+        if (Controller.getPlayer() != null && playAgain) {
             Controller.setPlayer(new AIPlayer());
             Controller.makeAIMove();
         }
@@ -180,13 +185,13 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         }
         if (GameIsOver()) {
             DisableAllButtons();
-            ClearBoard();
+            ClearBoard(false);
         } else {
-            label.setText(Controller.getPlayer() == null ? "X's Turn": "O's Turn");
+            label.setText(Controller.getPlayer() == null ? ((NOfMoves %2 == 0) ? "X's Turn" : "O's Turn "): "O's Turn");
         }
         if (NOfMoves % 2 == 0 && Controller.getPlayer() != null) {
             Controller.makeAIMove();
-            if (NOfMoves >= 9 && !IsWinner()) {
+            if (!IsWinner() && NOfMoves >= 9) {
                 DisableAllButtons();
                 label.setText("  ");
                 showGameEndPrompt("Draw!");
@@ -223,7 +228,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         int response = JOptionPane.showOptionDialog(null, prompt, "Confirm",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon(icon2), s, 0);
         if (response == 0) {
-            ClearBoard();
+            ClearBoard(true);
         } else if (response == 1) {
             System.exit(0);
         } else {
