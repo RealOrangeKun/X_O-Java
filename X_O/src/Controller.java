@@ -21,6 +21,10 @@ public class Controller {
 
     private static XOBoard xoBoard;
 
+    /*
+     * Controller class manages the interaction between the game components,
+     * menus, and the AI player.
+     */
     Controller(MainMenu mainMenu, SettingsMenu settingsMenu, XOBoard xoBoard) throws UnsupportedAudioFileException, LineUnavailableException, IOException, InterruptedException {
         Controller.mainMenu = mainMenu;
         Controller.settingsMenu = settingsMenu;
@@ -47,6 +51,7 @@ public class Controller {
             } else {
                 Controller.xoBoard.setVisible(true);
                 player = new AIPlayer();
+                Controller.xoBoard.getLabel().setText("O's Turn");
                 makeAIMove();
             }
         });
@@ -94,7 +99,10 @@ public class Controller {
             }
         });
     }
-
+    /*
+     * Toggles full-screen mode for the given JFrame.
+     * @param frame takes JFrame to make the size as fullscreen.
+     */
     private static void toggleFullScreen(JFrame frame) {
         GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();

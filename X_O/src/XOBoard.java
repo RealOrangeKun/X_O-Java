@@ -186,7 +186,12 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
         }
         if (NOfMoves % 2 == 0 && Controller.getPlayer() != null) {
             Controller.makeAIMove();
-            IsWinner();
+            if (NOfMoves >= 9 && !IsWinner()) {
+                DisableAllButtons();
+                label.setText("  ");
+                showGameEndPrompt("Draw!");
+
+            }
         }
     }
 

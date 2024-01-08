@@ -22,17 +22,6 @@ public class AIPlayer {
         }
         else {
             int[] bestMove = minimax(consoleBoard);
-            if (!isValidMove(bestMove[0], bestMove[1])) {
-                int random1 = 1, random2 = 1;
-                while (!isValidMove(random1, random2)) {
-                    random1 = new Random().nextInt(0, 2);
-                    random2 = new Random().nextInt(0, 2);
-                }
-                bestMove = new int[]{
-                        random1,
-                        random2
-                };
-            }
             consoleBoard[bestMove[0]][bestMove[1]] = 'X';
             return bestMove;
         }
@@ -84,7 +73,7 @@ public class AIPlayer {
             int maxScore = Integer.MIN_VALUE;
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
-                    if (board[i][j] == '\0') {
+                    if (board[i][j] == ' ') {
                         board[i][j] = symbol;
                         int currentScore = minimaxScore(board, depth + 1, false);
                         maxScore = Math.max(maxScore, currentScore);
@@ -97,7 +86,7 @@ public class AIPlayer {
             int minScore = Integer.MAX_VALUE;
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
-                    if (board[i][j] == '\0') {
+                    if (board[i][j] == ' ') {
                         board[i][j] = opponent;
                         int currentScore = minimaxScore(board, depth + 1, true);
                         minScore = Math.min(minScore, currentScore);
