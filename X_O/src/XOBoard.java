@@ -246,6 +246,7 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     }
 
     public void ChangeColor(Color newcolor) {
+        setBackground(newcolor);
         label.setBackground(newcolor);
         topPanel.setBackground(newcolor);
         middlepanel.setBackground(newcolor);
@@ -277,4 +278,5 @@ public class XOBoard extends JFrame implements ActionListener, MouseListener {
     public JLabel getLabel() {
         return label;
     }
+
 }
