@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class AIPlayer {
 
-    private char symbol;
+    private char symbol = 'X';
 
     private char[][] consoleBoard;
 
@@ -17,14 +17,38 @@ public class AIPlayer {
 
     public int[] makeMove() {
         if (isValidMove(1, 1)) {
-            updateBoard(1,1,'X');
+            updateBoard(1, 1, 'X');
             return new int[]{1, 1};
+        } else {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (isValidMove(i, j)) {
+                        updateBoard(i, j, 'X');
+                        if (isWinner(consoleBoard, 'X')) {
+                            return new int[]{i, j};
+                        }
+                        updateBoard(i, j, ' ');
+                    }
+                }
+            }
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if(isValidMove(i,j)){
+                        updateBoard(i, j, 'O');
+                        if (isWinner(consoleBoard, 'O')) {
+                            updateBoard(i, j, 'X');
+                            return new int[]{i, j};
+                        }
+                        updateBoard(i,j, ' ');
+                    }
+                }
+            }
         }
-        else {
-            int[] bestMove = minimax(consoleBoard);
-            consoleBoard[bestMove[0]][bestMove[1]] = 'X';
-            return bestMove;
-        }
+        int[] bestMove = minimax(consoleBoard);
+        while (!isValidMove(bestMove[0], bestMove[1]))
+            bestMove = minimax(consoleBoard);
+        consoleBoard[bestMove[0]][bestMove[1]] = 'X';
+        return bestMove;
     }
 
     private int[] minimax(char[][] board) {
@@ -99,9 +123,9 @@ public class AIPlayer {
     }
 
     private int evaluate(char[][] board) {
-        if (isWinner(board, symbol)) {
+        if (isWinner(board, 'X')) {
             return 10; // AI wins
-        } else if (isWinner(board, 'X')) {
+        } else if (isWinner(board, 'O')) {
             return -10; // Opponent wins
         } else {
             return 0; // It's a tie or the game is not over yet
@@ -121,7 +145,7 @@ public class AIPlayer {
     }
 
     private boolean isValidMove(int x, int y) {
-        if (x < 0 || y < 0 || x > 2 || y > 2 ) return false;
+        if (x < 0 || y < 0 || x > 2 || y > 2) return false;
         return consoleBoard[x][y] == 32;
     }
 
