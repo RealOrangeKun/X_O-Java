@@ -249,6 +249,10 @@ public class SettingsMenu extends JFrame implements ActionListener, MouseListene
         return fullscreen;
     }
 
+    /**
+     * Setter for the {@link SettingsMenu#isFullScreen} boolean.
+     * @param isFullScreen The new boolean value for the {@link SettingsMenu#isFullScreen}.
+     */
     public static void setIsFullScreen(boolean isFullScreen) {
         SettingsMenu.isFullScreen = isFullScreen;
     }

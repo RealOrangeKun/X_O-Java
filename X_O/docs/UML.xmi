@@ -1,0 +1,1105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:sysml="http://www.omg.org/spec/SysML/20100301/SysML-profile" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+  <packagedElement xmi:id="pebdebb01016e4db8aae864b7626891e8_306821213" xmi:type="uml:Model">
+    <packagedElement isDerived="false" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="8f2d47cb992e4df7ac03aa10300fad68" xmi:type="uml:Association">
+      <memberEnd xmi:idref="a6651d46bf68a450f8c0a7f2c5f45a2e2610" />
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="cc466a59-c202-4d0a-abd8-0dc5c0a94eec" xmi:type="uml:Property">
+        <type xmi:idref="9530cf9d4f6e40c1ae1309aae9ca2d13" />
+        <name />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+    </packagedElement>
+    <name />
+  </packagedElement>
+  <packagedElement xmi:id="simpfb7d76d28f3d45db9694ad45a7877491" xmi:type="uml:Model">
+    <name>(Project)</name>
+    <name>(Project)</name>
+  </packagedElement>
+  <packagedElement xmi:id="pf514dcd0c7bc4e3993b562174f8b7216_433506278" xmi:type="uml:Model">
+    <packagedElement isDerived="false" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="6308740a89424812bdb40a2ceb461a99" xmi:type="uml:Association">
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="b41ee093-41b8-4aae-862c-11533c6823c2" xmi:type="uml:Property">
+        <type xmi:idref="884cf03ccd9641ea8778d491db186a0b" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="2eb552c7-5b43-479b-8121-8b0adb4ad8df" xmi:type="uml:Property">
+        <type xmi:idref="73d281d81cfa41cea86b4709e45800a4" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement isDerived="false" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="106b28f1e3ec4bcf983785d075644618" xmi:type="uml:Association">
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="85aa5f53-2cad-478c-a14e-6080f63704cd" xmi:type="uml:Property">
+        <type xmi:idref="884cf03ccd9641ea8778d491db186a0b" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="9832e17b-42ac-4b52-8c85-51db814a8746" xmi:type="uml:Property">
+        <type xmi:idref="3ce82ae04e124a8ca28a6d351469bc19" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement isDerived="false" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="3c3d243ed74648ae9d908e4a65ee0dbe" xmi:type="uml:Association">
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="2aaf0376-2962-4fd9-a11d-86bb2b3c6091" xmi:type="uml:Property">
+        <type xmi:idref="884cf03ccd9641ea8778d491db186a0b" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="88f7ba08-4e4f-4604-a2d7-bfe58ee08be1" xmi:type="uml:Property">
+        <type xmi:idref="89b9b8bbdaa647d09c074f6506f17300" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement isDerived="false" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="4fb8a1a26fa241049485883aaaa0c755" xmi:type="uml:Association">
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="54e77962-516b-4160-81ca-d8866934982f" xmi:type="uml:Property">
+        <type xmi:idref="884cf03ccd9641ea8778d491db186a0b" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+      <ownedEnd isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="true" isStatic="false" isLeaf="false" xmi:id="9eecedea-092a-458d-87a0-b59a4b847024" xmi:type="uml:Property">
+        <type xmi:idref="08e674538e6b421890c3feb327123acb" />
+        <visibility>private</visibility>
+        <lower>0</lower>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement isAbstract="false" isActive="false" isFinalSpecialization="false" isLeaf="false" xmi:id="89b9b8bbdaa647d09c074f6506f17300" xmi:type="uml:Class">
+      <name>AIPlayer</name>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="false" isLeaf="false" xmi:id="6307f2a0fb9a4b9cb2ad9ca3c116fb50" xmi:type="uml:Property">
+        <name>symbol</name>
+        <type xmi:idref="Java.char" />
+        <name>symbol</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>AIPlayer</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>AIPlayer</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>makeMove</name>
+        <lower>1</lower>
+        <type xmi:idref="Java.int" />
+        <upper>1</upper>
+        <name>makeMove</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <name>AIPlayer</name>
+      <visibility>public</visibility>
+    </packagedElement>
+    <packagedElement isAbstract="false" isActive="false" isFinalSpecialization="false" isLeaf="false" xmi:id="884cf03ccd9641ea8778d491db186a0b" xmi:type="uml:Class">
+      <name>Controller</name>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="65af28d4c5dd4d6aae5b88b72fa29db0" xmi:type="uml:Property">
+        <name>mainMenu</name>
+        <type xmi:idref="Class:9530cf9d4f6e40c1ae1309aae9ca2d13" />
+        <name>mainMenu</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="15fe4356a3344ce4a270333112b434d2" xmi:type="uml:Property">
+        <name>settingsMenu</name>
+        <type xmi:idref="Class:3ce82ae04e124a8ca28a6d351469bc19" />
+        <name>settingsMenu</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="dc74b5678ff84f779c037a7d44563384" xmi:type="uml:Property">
+        <name>defualtSong</name>
+        <type xmi:idref="Java.String" />
+        <name>defualtSong</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="898d9b857de74dd38b80aa9528c22805" xmi:type="uml:Property">
+        <name>player</name>
+        <type xmi:idref="Class:89b9b8bbdaa647d09c074f6506f17300" />
+        <name>player</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="bd83177436d94514800cb71623cead6e" xmi:type="uml:Property">
+        <name>xoBoard</name>
+        <type xmi:idref="Class:08e674538e6b421890c3feb327123acb" />
+        <name>xoBoard</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>Controller</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>mainMenu</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MainMenu" />
+          <name>mainMenu</name>
+        </ownedParameter>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>settingsMenu</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="SettingsMenu" />
+          <name>settingsMenu</name>
+        </ownedParameter>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>xoBoard</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="XOBoard" />
+          <name>xoBoard</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>Controller</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>toggleFullScreen</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>frame</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="JFrame" />
+          <name>frame</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>toggleFullScreen</name>
+        <visibility>private</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>ExitPrompt</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>ExitPrompt</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getMainMenu</name>
+        <lower>1</lower>
+        <type xmi:idref="Class:73d281d81cfa41cea86b4709e45800a4" />
+        <upper>1</upper>
+        <name>getMainMenu</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>openNewMusic</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>openNewMusic</name>
+        <visibility>private</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>makeAIMove</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>makeAIMove</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getPlayer</name>
+        <lower>1</lower>
+        <type xmi:idref="Class:89b9b8bbdaa647d09c074f6506f17300" />
+        <upper>1</upper>
+        <name>getPlayer</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>setPlayer</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>player</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="AIPlayer" />
+          <name>player</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>setPlayer</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <name>Controller</name>
+      <visibility>public</visibility>
+    </packagedElement>
+    <packagedElement isAbstract="false" isActive="false" isFinalSpecialization="false" isLeaf="false" xmi:id="f04a27c841194e54a63d29f412b20e00" xmi:type="uml:Class">
+      <name>Main</name>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>main</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>args</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="Java.String" />
+          <name>args</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>main</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <name>Main</name>
+      <visibility>public</visibility>
+    </packagedElement>
+    <packagedElement isAbstract="false" isActive="false" isFinalSpecialization="false" isLeaf="false" xmi:id="73d281d81cfa41cea86b4709e45800a4" xmi:type="uml:Class">
+      <name>MainMenu</name>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="3061a3d3f07d4d65867612cc21d3da53" xmi:type="uml:Property">
+        <name>start</name>
+        <type xmi:idref="JButton" />
+        <name>start</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="8cdc2171c5484cffa06d168d9fc12c06" xmi:type="uml:Property">
+        <name>settings</name>
+        <type xmi:idref="JButton" />
+        <name>settings</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="b5741cfafe4c42229c99be5334ba4633" xmi:type="uml:Property">
+        <name>exit</name>
+        <type xmi:idref="JButton" />
+        <name>exit</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="dbcdff25459e4e969ad578237c860fb1" xmi:type="uml:Property">
+        <name>topPanel</name>
+        <type xmi:idref="JPanel" />
+        <name>topPanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="1757c65c901a4aa98da58d6b08cf8f39" xmi:type="uml:Property">
+        <name>middlePanel</name>
+        <type xmi:idref="JPanel" />
+        <name>middlePanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="0e9a9830168d41189cc4fa0128d79908" xmi:type="uml:Property">
+        <name>startPanel</name>
+        <type xmi:idref="JPanel" />
+        <name>startPanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="3e2816163f334e5ea0a3d60abcd85568" xmi:type="uml:Property">
+        <name>settingsPanel</name>
+        <type xmi:idref="JPanel" />
+        <name>settingsPanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="e55e962c29e24834bc97b0bb2b3f2275" xmi:type="uml:Property">
+        <name>exitPanel</name>
+        <type xmi:idref="JPanel" />
+        <name>exitPanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="ed8cb322d94240a7b73425e83fad0822" xmi:type="uml:Property">
+        <name>BUTTON_SPACING</name>
+        <type xmi:idref="Java.int" />
+        <name>BUTTON_SPACING</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="bc8b3b941ff048248b309e0f02f31015" xmi:type="uml:Property">
+        <name>backgroundColor</name>
+        <type xmi:idref="Color" />
+        <name>backgroundColor</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="909e9ae0f84148a78c0cb322f1f36782" xmi:type="uml:Property">
+        <name>icon</name>
+        <type xmi:idref="Image" />
+        <name>icon</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="efcd23d3071b47b0a4100fe43f2ae331" xmi:type="uml:Property">
+        <name>Username</name>
+        <type xmi:idref="Java.String" />
+        <name>Username</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>MainMenu</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>name</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="Java.String" />
+          <name>name</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>MainMenu</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>createButtonPanel</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>button</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="JButton" />
+          <name>button</name>
+        </ownedParameter>
+        <type xmi:idref="JPanel" />
+        <upper>1</upper>
+        <name>createButtonPanel</name>
+        <visibility>private</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseClicked</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseClicked</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mousePressed</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mousePressed</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseReleased</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseReleased</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseEntered</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseEntered</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseExited</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseExited</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>actionPerformed</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="ActionEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>actionPerformed</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getUsername</name>
+        <lower>1</lower>
+        <type xmi:idref="Java.String" />
+        <upper>1</upper>
+        <name>getUsername</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>ValidUsername</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>s</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="Java.String" />
+          <name>s</name>
+        </ownedParameter>
+        <type xmi:idref="Java.boolean" />
+        <upper>1</upper>
+        <name>ValidUsername</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getSettings</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getSettings</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getStart</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getStart</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getExit</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getExit</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>ChangeColor</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>newColor</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="Color" />
+          <name>newColor</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>ChangeColor</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <name>MainMenu</name>
+      <visibility>public</visibility>
+    </packagedElement>
+    <packagedElement isAbstract="false" isActive="false" isFinalSpecialization="false" isLeaf="false" xmi:id="9530cf9d4f6e40c1ae1309aae9ca2d13" xmi:type="uml:Class">
+      <name>MusicPlayer</name>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="c81c4b0882b0462caee3da49a322402b" xmi:type="uml:Property">
+        <name>latch</name>
+        <type xmi:idref="CountDownLatch" />
+        <name>latch</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="29485f69ae524156b04e1a422c4b6df7" xmi:type="uml:Property">
+        <name>clip</name>
+        <type xmi:idref="Clip" />
+        <name>clip</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="e2ed2d8187cb4af2bdb9feb9367c384a" xmi:type="uml:Property">
+        <name>isPlaying</name>
+        <type xmi:idref="Java.boolean" />
+        <name>isPlaying</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="5cff495f3670488292f9d2af4556ac36" xmi:type="uml:Property">
+        <name>isPaused</name>
+        <type xmi:idref="Java.boolean" />
+        <name>isPaused</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="2e4ae08475fb4d689376d1311345f906" xmi:type="uml:Property">
+        <name>pausePosition</name>
+        <type xmi:idref="Java.long" />
+        <name>pausePosition</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>playmusic</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>music</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="Java.String" />
+          <name>music</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>playmusic</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>pausePlayback</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>pausePlayback</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>stopPlayback</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>stopPlayback</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>resumePlayback</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>resumePlayback</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>isPlaying</name>
+        <lower>1</lower>
+        <type xmi:idref="Java.boolean" />
+        <upper>1</upper>
+        <name>isPlaying</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <name>MusicPlayer</name>
+      <visibility>public</visibility>
+    </packagedElement>
+    <packagedElement isAbstract="false" isActive="false" isFinalSpecialization="false" isLeaf="false" xmi:id="3ce82ae04e124a8ca28a6d351469bc19" xmi:type="uml:Class">
+      <name>SettingsMenu</name>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="9484d907976a4f26a95b0056d54ef70f" xmi:type="uml:Property">
+        <name>icon</name>
+        <type xmi:idref="Image" />
+        <name>icon</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="52d6f9fc67bd487e893b78147467fe97" xmi:type="uml:Property">
+        <name>middlePanel</name>
+        <type xmi:idref="JPanel" />
+        <name>middlePanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="5eee3397f98e4b5c979ab990ee65966e" xmi:type="uml:Property">
+        <name>music</name>
+        <type xmi:idref="JButton" />
+        <name>music</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="ae5ed4f5adf14b99ae5b0d31f4846f17" xmi:type="uml:Property">
+        <name>fullscreen</name>
+        <type xmi:idref="JButton" />
+        <name>fullscreen</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="06216f1c1a194fc9812f92f323816564" xmi:type="uml:Property">
+        <name>back</name>
+        <type xmi:idref="JButton" />
+        <name>back</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="57440c069df1493999c8ca8c10d5e7b9" xmi:type="uml:Property">
+        <name>changeMusic</name>
+        <type xmi:idref="JButton" />
+        <name>changeMusic</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="b1bd234203194468b1de3c06092875f0" xmi:type="uml:Property">
+        <name>changeColor</name>
+        <type xmi:idref="JButton" />
+        <name>changeColor</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="1c3c97fc59df41e7b2780a06f2a8cbb2" xmi:type="uml:Property">
+        <name>backgroundColor</name>
+        <type xmi:idref="Color" />
+        <name>backgroundColor</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="d88db1e531454bb9b757dd3dafbb2361" xmi:type="uml:Property">
+        <name>BUTTON_SPACING</name>
+        <type xmi:idref="Java.int" />
+        <name>BUTTON_SPACING</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="8240a610c49443dd9effab971904fc57" xmi:type="uml:Property">
+        <name>musicpanel</name>
+        <type xmi:idref="JPanel" />
+        <name>musicpanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="29b30bf6f197441e90b0184b0cc3d97d" xmi:type="uml:Property">
+        <name>fullscreenpanel</name>
+        <type xmi:idref="JPanel" />
+        <name>fullscreenpanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="bf63a94b721843b3a836f96984aa75d3" xmi:type="uml:Property">
+        <name>backpanel</name>
+        <type xmi:idref="JPanel" />
+        <name>backpanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="d1cd619cbbba4346bb6dfe6617a4b3ed" xmi:type="uml:Property">
+        <name>changemusicpanel</name>
+        <type xmi:idref="JPanel" />
+        <name>changemusicpanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="e8b1937d2abf4d18abf9212d13a3877c" xmi:type="uml:Property">
+        <name>changecolorpanel</name>
+        <type xmi:idref="JPanel" />
+        <name>changecolorpanel</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="015830fad62e4e969c4e36c04bcc76f7" xmi:type="uml:Property">
+        <name>isFullScreen</name>
+        <type xmi:idref="Java.boolean" />
+        <name>isFullScreen</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>SettingsMenu</name>
+        <lower>1</lower>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>SettingsMenu</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>createButtonPanel</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>button</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="JButton" />
+          <name>button</name>
+        </ownedParameter>
+        <type xmi:idref="JPanel" />
+        <upper>1</upper>
+        <name>createButtonPanel</name>
+        <visibility>private</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>actionPerformed</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="ActionEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>actionPerformed</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseClicked</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseClicked</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mousePressed</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mousePressed</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseReleased</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseReleased</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseEntered</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseEntered</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>mouseExited</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>e</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="MouseEvent" />
+          <name>e</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>mouseExited</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>IsFullScreen</name>
+        <lower>1</lower>
+        <type xmi:idref="Java.boolean" />
+        <upper>1</upper>
+        <name>IsFullScreen</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getBack</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getBack</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getFullscreen</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getFullscreen</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="true" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>setIsFullScreen</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>isFullScreen</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="Java.boolean" />
+          <name>isFullScreen</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>setIsFullScreen</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getMusic</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getMusic</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getChangeMusic</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getChangeMusic</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>getChangeColor</name>
+        <lower>1</lower>
+        <type xmi:idref="JButton" />
+        <upper>1</upper>
+        <name>getChangeColor</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <ownedOperation isOrdered="false" isQuery="false" isUnique="false" isAbstract="false" isStatic="false" isLeaf="false" xmi:id="" xmi:type="uml:Operation">
+        <name>ChangeColor</name>
+        <lower>1</lower>
+        <ownedParameter isException="false" isStream="false" isOrdered="false" isUnique="false" xmi:id="" xmi:type="uml:Parameter">
+          <name>newColor</name>
+          <direction>inout</direction>
+          <lower>1</lower>
+          <upper>1</upper>
+          <type xmi:idref="Color" />
+          <name>newColor</name>
+        </ownedParameter>
+        <type xmi:idref="" />
+        <upper>1</upper>
+        <name>ChangeColor</name>
+        <visibility>public</visibility>
+      </ownedOperation>
+      <name>SettingsMenu</name>
+      <visibility>public</visibility>
+    </packagedElement>
+    <packagedElement isAbstract="false" isActive="false" isFinalSpecialization="false" isLeaf="false" xmi:id="08e674538e6b421890c3feb327123acb" xmi:type="uml:Class">
+      <name>XOBoard</name>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="false" isLeaf="false" xmi:id="7097133db0d2484f93a322243b810f2d" xmi:type="uml:Property">
+        <name>backgroundColor</name>
+        <type xmi:idref="Color" />
+        <name>backgroundColor</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <ownedAttribute isComposite="false" isDerived="false" isDerivedUnion="false" isID="false" isReadOnly="false" isOrdered="false" isUnique="false" isStatic="true" isLeaf="false" xmi:id="1e800a9ef1814a3e953a504fd3b910a9" xmi:type="uml:Property">
+        <name>icon</name>
+        <type xmi:idref="Image" />
+        <name>icon</name>
+        <visibility>private</visibility>
+        <lower>1</lower>
+        <upper>1</upper>
+      </ownedAttribute>
+      <name>XOBoard</name>
+      <visibility>public</visibility>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Java.char" xmi:type="uml:DataType">
+      <name>char</name>
+      <name>char</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Java.int" xmi:type="uml:DataType">
+      <name>int</name>
+      <name>int</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Class:9530cf9d4f6e40c1ae1309aae9ca2d13" xmi:type="uml:DataType">
+      <name>MusicPlayer</name>
+      <name>MusicPlayer</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Class:3ce82ae04e124a8ca28a6d351469bc19" xmi:type="uml:DataType">
+      <name>SettingsMenu</name>
+      <name>SettingsMenu</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Java.String" xmi:type="uml:DataType">
+      <name>String</name>
+      <name>String</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Class:89b9b8bbdaa647d09c074f6506f17300" xmi:type="uml:DataType">
+      <name>AIPlayer</name>
+      <name>AIPlayer</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Class:08e674538e6b421890c3feb327123acb" xmi:type="uml:DataType">
+      <name>XOBoard</name>
+      <name>XOBoard</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="MainMenu" xmi:type="uml:DataType">
+      <name>MainMenu</name>
+      <name>MainMenu</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="SettingsMenu" xmi:type="uml:DataType">
+      <name>SettingsMenu</name>
+      <name>SettingsMenu</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="XOBoard" xmi:type="uml:DataType">
+      <name>XOBoard</name>
+      <name>XOBoard</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="JFrame" xmi:type="uml:DataType">
+      <name>JFrame</name>
+      <name>JFrame</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Class:73d281d81cfa41cea86b4709e45800a4" xmi:type="uml:DataType">
+      <name>MainMenu</name>
+      <name>MainMenu</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Class:89b9b8bbdaa647d09c074f6506f17300" xmi:type="uml:DataType">
+      <name>AIPlayer</name>
+      <name>AIPlayer</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="AIPlayer" xmi:type="uml:DataType">
+      <name>AIPlayer</name>
+      <name>AIPlayer</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="JButton" xmi:type="uml:DataType">
+      <name>JButton</name>
+      <name>JButton</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="JPanel" xmi:type="uml:DataType">
+      <name>JPanel</name>
+      <name>JPanel</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Color" xmi:type="uml:DataType">
+      <name>Color</name>
+      <name>Color</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Image" xmi:type="uml:DataType">
+      <name>Image</name>
+      <name>Image</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="MouseEvent" xmi:type="uml:DataType">
+      <name>MouseEvent</name>
+      <name>MouseEvent</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="ActionEvent" xmi:type="uml:DataType">
+      <name>ActionEvent</name>
+      <name>ActionEvent</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Java.boolean" xmi:type="uml:DataType">
+      <name>boolean</name>
+      <name>boolean</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="CountDownLatch" xmi:type="uml:DataType">
+      <name>CountDownLatch</name>
+      <name>CountDownLatch</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Clip" xmi:type="uml:DataType">
+      <name>Clip</name>
+      <name>Clip</name>
+    </packagedElement>
+    <packagedElement isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:id="Java.long" xmi:type="uml:DataType">
+      <name>long</name>
+      <name>long</name>
+    </packagedElement>
+    <name />
+  </packagedElement>
+  <packagedElement xmi:id="p00a73ac8564b425d9bcac687c301bc54_656172119" xmi:type="uml:Model">
+    <name>Model1</name>
+    <packagedElement xmi:id="bd6f260b95d2414fa55889492092f750" xmi:type="uml:Package">
+      <visibility>public</visibility>
+      <name />
+    </packagedElement>
+    <name>Model1</name>
+  </packagedElement>
+</xmi:XMI>
