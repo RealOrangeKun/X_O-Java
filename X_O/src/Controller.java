@@ -222,7 +222,6 @@ public class Controller {
             SettingsMenu.setIsFullScreen(false);
         }
     }
-
     /**
      * <p>Displays an exit prompt using {@link JOptionPane#showConfirmDialog(Component, Object)} and stores the return in an
      * int variable called {@code response}.

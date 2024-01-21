@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  * MusicPlayer class which is responsible for playing/pausing/stopping the music.
  *
  * @author Youssef Tarek
- * @version 2.0
+ * @version 1.0
  */
 
 public class MusicPlayer {
