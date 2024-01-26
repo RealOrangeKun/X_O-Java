@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"<Unnamed>","l":"AIPlayer"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Controller"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"MainMenu"},{"p":"<Unnamed>","l":"MusicPlayer"},{"p":"<Unnamed>","l":"SettingsMenu"},{"p":"<Unnamed>","l":"XOBoard"}];updateSearchResults();
