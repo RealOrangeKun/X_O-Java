@@ -1,20 +1,23 @@
-# XO Game
-
-A simple Java implementation of the classic XO (Tic Tac Toe) game using [Javax](https://docs.oracle.com/javase/8/docs/api/javax/net/package-summary.html).[swing](https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/javax/swing/package-summary.html) and this project follows the [MVC](https://dotnet.microsoft.com/en-us/apps/aspnet/mvc#:~:text=MVC%20is%20a%20design%20pattern,to%20achieve%20separation%20of%20concerns.) design pattern.
-
 ## Table of Contents
 - [Project Title](#xo-game)
 - [Description](#description)
 - [Features](#features)
 - [Code Documentation](#code-documentation)
+- [How to run](#how-to-run)
+
+
+# XO Game
+
+A simple Java implementation of the classic XO (Tic Tac Toe) game using [Javax](https://docs.oracle.com/javase/8/docs/api/javax/net/package-summary.html).[swing](https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/javax/swing/package-summary.html) and this project follows the [MVC](https://dotnet.microsoft.com/en-us/apps/aspnet/mvc#:~:text=MVC%20is%20a%20design%20pattern,to%20achieve%20separation%20of%20concerns.) design pattern.
+
+
 
 
 ## Description
 
-At first the program will ask for your name and it wont work if you submit an empty name and you can submit by hitting enter or pressing on the submit button.
+The well known and beloved Tic Tac Toe game made with java! The game has background music playing in the background while the player enjoys the game and it gives the player the choice to change the song or even change the background color of the game. The player can choose to play with another human locally or an AI that plays using the MiniMax Algorithm to make it's moves.
 
-Song in the background: Summertime - Cinnamons (TRAP REMIX) Kimi No Toriko Song (Prod. Levnx)
-Link: https://www.youtube.com/watch?v=oKuhRPtwm9M&ab_channel=XReachNation
+Song in the background: [GigaChad 8bit Song](https://www.youtube.com/watch?v=VBs7Nek8YDw&ab_channel=NathCraft)
 
 ## Features
 
@@ -207,6 +210,64 @@ The project consists of 3 main classes [Controller](#controllerjava), [Settings 
         }
     }
     ```
+- ### [AIPlayer.java](X_O\src\AIPlayer.java)
+    The `AIPlayer` class in this project represents an artificial intelligence player for a game. It is responsible for making intelligent decisions, typically in the context of a game or simulation, by implementing the minimax algorithm.
+    #### Overview
+    The primary responsibilities of the `AIPlayer` class include:
+    - Evaluating the current game state using the minimax algorithm to make informed decisions.
+    - Providing methods for adjusting the difficulty level and learning from past experiences.
+    #### Key Methods
+    ##### `public int[] makeMove()`
+    This is the method reponsible for maing the move in the 2d board in the `AIPlayer` by using the MiniMax algorithm to find the best move on the board and then it returns an array with `index 0` as the x-coordinate of the move and `index 1` as the y-coordinate of the move.
+    ```java
+    public int[] makeMove() {
+        // Attempt to win the game
+        if (isValidMove(1, 1)) {
+            updateBoard(1, 1, 'X');
+            return new int[]{1, 1};
+        } else {
+            // Block opponent's winning moves
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (isValidMove(i, j)) {
+                        updateBoard(i, j, 'X');
+                        if (isWinner(consoleBoard, 'X')) {
+                            return new int[]{i, j};
+                        }
+                        updateBoard(i, j, ' ');
+                    }
+                }
+            }
+
+            // Play optimally using minimax algorithm
+            int[] bestMove = minimax(consoleBoard);
+            while (!isValidMove(bestMove[0], bestMove[1]))
+                bestMove = minimax(consoleBoard);
+            consoleBoard[bestMove[0]][bestMove[1]] = 'X';
+            return bestMove;
+        }
+    }
+    ```
+    #### Usage Example
+    ```java
+    AIPlayer p = new AIPlayer();
+    p.makeMove();
+    // Human makes a move in cell 1,2 for example
+    p.updateBoard(1,2,'O');
+    ```
+## How to run
+### Using Releases
+To run the game itself you would need to go to latest releast and just download the source code it should have the game as a `.jar` or `.exe` you can run using both.
+### Cloning the repo
+You can run the game by cloning the repo itself and running it in the console by using the following commands in `git-bash`
+```bash
+# Clone the repo
+git clone https://github.com/RealOrangeKun/X_O-Java.git 
+# Go to the repo folder
+cd /path/to/repo/X_O/
+# Run the .exe file (you can also run the .jar file)
+./X_O.exe
+```
 
 ## License
 This project is licensed under the [Apache License](LICENSE)
